@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Enter your skill:"
+read SKILL
+
+echo "Your $SKILL skill is in high demand in IT"
+
+read -p "Username: " USR
+read -sp "Password: " PASS
+
+echo
+echo "Login Successful: Welcome User $USR"
