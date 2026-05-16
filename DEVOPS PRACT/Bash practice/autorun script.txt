@@ -1,0 +1,1 @@
+* * * * * /bin/bash /opt/scripts/11_monit.sh >> /var/log/monit_httpd.log 2>&1
