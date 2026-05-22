@@ -1,0 +1,409 @@
+========================================================
+        CENTOS / LINUX IMPORTANT DIRECTORIES
+========================================================
+
+
+ROOT DIRECTORY (/)
+--------------------------------------------------------
+All folders in Linux start from the root directory (/).
+
+Command:
+ls /
+
+Example Output:
+bin  boot  dev  etc  home  lib  media  mnt  opt
+proc root  run  sbin srv  sys  tmp  usr  var
+
+
+========================================================
+                IMPORTANT DIRECTORIES LIST
+========================================================
+
+/bin
+/boot
+/dev
+/etc
+/home
+/root
+/lib
+/lib64
+/media
+/mnt
+/opt
+/proc
+/run
+/sbin
+/srv
+/sys
+/tmp
+/usr
+/var
+/afs
+/vagrant
+
+
+========================================================
+                DIRECTORY EXPLANATIONS
+========================================================
+
+
+1. /bin
+--------------------------------------------------------
+Meaning:
+Binary commands directory.
+
+Use:
+Contains basic Linux commands used by all users.
+
+Common Commands:
+ls
+cp
+mv
+cat
+pwd
+
+Importance:
+This folder is essential because Linux basic commands
+are stored here.
+
+Example:
+ls /bin
+
+
+2. /boot
+--------------------------------------------------------
+Meaning:
+Boot files directory.
+
+Use:
+Stores files required to start Linux.
+
+Contains:
+- Linux Kernel
+- GRUB Bootloader files
+
+Importance:
+Without this folder, the operating system cannot boot.
+
+
+3. /dev
+--------------------------------------------------------
+Meaning:
+Device files directory.
+
+Use:
+All hardware devices are represented as files here.
+
+Examples:
+- /dev/sda  -> Hard Disk
+- /dev/tty  -> Terminal
+- /dev/null -> Null device
+
+Importance:
+Linux communicates with hardware through this folder.
+
+
+4. /etc
+--------------------------------------------------------
+Meaning:
+Configuration directory.
+
+Use:
+Stores system and application configuration files.
+
+Examples:
+- /etc/passwd
+- /etc/hosts
+- /etc/ssh/
+
+Importance:
+Very important directory for system administration.
+
+Example:
+SSH settings are stored here.
+
+
+5. /home
+--------------------------------------------------------
+Meaning:
+Home directory for normal users.
+
+Use:
+Stores user personal files and folders.
+
+Example:
+- /home/rohit
+
+Importance:
+Users save documents, scripts, projects, and downloads here.
+
+
+6. /root
+--------------------------------------------------------
+Meaning:
+Root user's home directory.
+
+Use:
+Personal folder of the administrator (root user).
+
+Importance:
+Only root/admin mainly uses this directory.
+
+
+7. /lib
+--------------------------------------------------------
+Meaning:
+Library directory.
+
+Use:
+Stores important libraries needed by system commands.
+
+Importance:
+Programs inside /bin and /sbin depend on these files.
+
+
+8. /lib64
+--------------------------------------------------------
+Meaning:
+64-bit library directory.
+
+Use:
+Stores libraries for 64-bit applications.
+
+Importance:
+Required for modern 64-bit Linux systems.
+
+
+9. /media
+--------------------------------------------------------
+Meaning:
+Removable media directory.
+
+Use:
+USB drives and CDs are automatically mounted here.
+
+Importance:
+Helps users access removable devices easily.
+
+
+10. /mnt
+--------------------------------------------------------
+Meaning:
+Mount directory.
+
+Use:
+Used for manually mounting storage devices.
+
+Importance:
+Temporary mount point for administrators.
+
+
+11. /opt
+--------------------------------------------------------
+Meaning:
+Optional software directory.
+
+Use:
+Stores third-party applications and software.
+
+Examples:
+- Google Chrome
+- Custom software
+
+Importance:
+Keeps optional software separate from system files.
+
+
+12. /proc
+--------------------------------------------------------
+Meaning:
+Process information directory.
+
+Use:
+Virtual filesystem containing system and process info.
+
+Examples:
+- /proc/cpuinfo
+- /proc/meminfo
+
+Importance:
+Used to monitor system information.
+
+Example:
+cat /proc/cpuinfo
+
+
+13. /run
+--------------------------------------------------------
+Meaning:
+Runtime data directory.
+
+Use:
+Stores temporary runtime information for processes.
+
+Importance:
+Needed while the system is running.
+
+
+14. /sbin
+--------------------------------------------------------
+Meaning:
+System binary commands.
+
+Use:
+Contains administrative commands mainly used by root.
+
+Commands:
+reboot
+shutdown
+fdisk
+
+Importance:
+Used for system management tasks.
+
+
+15. /srv
+--------------------------------------------------------
+Meaning:
+Service directory.
+
+Use:
+Stores data used by services like web or FTP servers.
+
+Importance:
+Useful in server environments.
+
+
+16. /sys
+--------------------------------------------------------
+Meaning:
+System information directory.
+
+Use:
+Provides hardware and kernel-related information.
+
+Importance:
+Used for hardware and device management.
+
+
+17. /tmp
+--------------------------------------------------------
+Meaning:
+Temporary files directory.
+
+Use:
+Stores temporary files created by programs.
+
+Importance:
+Files may be deleted automatically after reboot.
+
+
+18. /usr
+--------------------------------------------------------
+Meaning:
+User system resources directory.
+
+Use:
+Stores installed applications and utilities.
+
+Examples:
+- /usr/bin
+- /usr/sbin
+- /usr/local
+
+Importance:
+Most Linux software is stored here.
+
+
+19. /var
+--------------------------------------------------------
+Meaning:
+Variable data directory.
+
+Use:
+Stores data that changes frequently.
+
+Examples:
+- /var/log
+- /var/cache
+- /var/www
+
+Importance:
+Very important for logs, cache, and web servers.
+
+
+20. /afs
+--------------------------------------------------------
+Meaning:
+Andrew File System.
+
+Use:
+Network shared filesystem.
+
+Importance:
+Mostly used in enterprise or university systems.
+
+
+21. /vagrant
+--------------------------------------------------------
+Meaning:
+Vagrant shared directory.
+
+Use:
+Shares files between host machine and virtual machine.
+
+Importance:
+Useful while working with Vagrant virtual machines.
+
+
+========================================================
+          MOST IMPORTANT DIRECTORIES TO REMEMBER
+========================================================
+
+/etc   -> Configuration files
+/home  -> User files
+/var   -> Logs and changing data
+/bin   -> Basic commands
+/dev   -> Hardware devices
+/proc  -> Process information
+/tmp   -> Temporary files
+/usr   -> Installed software
+
+
+========================================================
+                USEFUL LINUX COMMANDS
+========================================================
+
+1. Show root directories
+--------------------------------------------------------
+ls /
+
+
+2. Show detailed directory listing
+--------------------------------------------------------
+ls -l /
+
+
+3. Check disk usage
+--------------------------------------------------------
+du -sh /var
+
+
+4. Show mounted devices
+--------------------------------------------------------
+mount
+
+
+5. Show CPU information
+--------------------------------------------------------
+cat /proc/cpuinfo
+
+
+6. Show memory information
+--------------------------------------------------------
+cat /proc/meminfo
+
+
+========================================================
+                     END OF NOTES
+========================================================
