@@ -7,3 +7,4 @@ ssh ubuntu@192.168.1.48
 
 
 sudo -i key.pem ec2-user@<ip key public>
+
