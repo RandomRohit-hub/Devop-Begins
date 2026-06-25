@@ -16,4 +16,4 @@ This repository has been divided into practical project implementations and a de
 2. If you are experimenting with Jenkins Freestyle setups, make your modifications within **`freestyle-build-foundation/`**.
 3. If you want to refine multi-stage automated pipelines or tweak the `Jenkinsfile`, work inside **`pipeline-as-code-mastery/`**.
 
-zz
+
