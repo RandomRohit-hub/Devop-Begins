@@ -1,0 +1,23 @@
+# Module 12: Infrastructure Files - Ansible Playbook
+# Used to install Apache HTTPD and Postgresql on servers.
+---
+- hosts: websrvgrp
+  become: yes
+  tasks:
+    - name: Install Apache Web Server
+      yum:
+        name: httpd
+        state: latest
+
+    - name: Deploy Apache Configuration File
+      copy:
+        src: file/httpd.conf
+        dest: /etc/httpd.conf
+
+- hosts: dbsrvgrp
+  become: yes
+  tasks:
+    - name: Install Postgresql Database Server
+      yum:
+        name: postgresql
+        state: latest
