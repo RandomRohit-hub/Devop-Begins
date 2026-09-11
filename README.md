@@ -37,6 +37,26 @@ Devop-Begins/
 │   ├── scripts/                     # Script assets to spin up backend HTTP servers
 │   └── README.md                    # Elastic Load Balancing configuration walkthrough
 │
+├── 06-CI-and-Delivery-w-jenkins/    # Jenkins CI/CD pipeline automation & build verification
+│   ├── jenkins.txt                  # Sample Jenkins workspace log and diagnostics
+│   └── README.md                    # CI/CD architecture and vProfile reference guide
+│
+├── 07-PYthon/                       # Python for DevOps Automation course (13 structured modules)
+│   ├── 01-Python-Basics/            # Data types, variables, slicing, and basics
+│   ├── 02-Python-Syntax-vs-Bash/    # Syntax comparison between Bash and Python
+│   ├── 03-Operators/                # Arithmetic, comparison, and logical operators
+│   ├── 04-Conditions/               # If-else control flow
+│   ├── 05-Loops/                    # For/while loops, nested loops, break/continue
+│   ├── 06-Functions/                # Modular functions, *args, and **kwargs
+│   ├── 07-Built-in-Methods/         # String, list, and dictionary manipulation methods
+│   ├── 08-Exception-Handling/       # Defensive programming with try/except
+│   ├── 09-JSON/                     # JSON data parsing and serialization
+│   ├── 10-OS-Automation/            # System administration, users/groups, os/subprocess
+│   ├── 11-Fabric-Automation/        # SSH-based remote multi-node automation
+│   ├── 12-Infrastructure-Files/     # Local VM Vagrantfile & Ansible provisioning
+│   ├── 13-IDE-File/                 # Python IDE starter script
+│   └── readme.md                    # Full Python course roadmap and guides
+│
 └── assets/                          # Static media, architecture and cheat sheet diagrams
     └── diagrams/                    # System flowcharts, structures, and protocol maps
 ```
@@ -66,6 +86,14 @@ Devop-Begins/
 ### ⚖️ [05. Load Balancing (ELB)](./05-load-balancing/)
 *   Demonstrates how to set up active nodes behind an AWS Application/Classic load balancer.
 *   Use [`multios_websetup.sh`](./05-load-balancing/scripts/multios_websetup.sh) to quickly bootstrap Apache web services on either RedHat/CentOS or Ubuntu/Debian targets automatically.
+
+### 🏗️ [06. CI & Delivery with Jenkins](./06-CI-and-Delivery-w-jenkins/)
+*   Continuous Integration and Continuous Delivery workflow fundamentals.
+*   Console build log diagnostics and integration with the enterprise multi-tier [vprofile-project](https://github.com/hkhcoder/vprofile-project/tree/jdk11).
+
+### 🐍 [07. Python for DevOps Automation](./07-PYthon/)
+*   Complete 13-module structured roadmap from Python syntax basics to production infrastructure automation.
+*   Covers OS system administration (`os`, `subprocess`), remote SSH execution (`fabric`), JSON serialization, and Ansible integration.
 
 ---
 
