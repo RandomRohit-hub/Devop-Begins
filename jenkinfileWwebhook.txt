@@ -1,0 +1,98 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'MAVEN3.9'
+        jdk 'JDK17'
+    }
+
+    stages {
+
+        stage('Fetch Code') {
+            steps {
+                git(
+                    branch: 'atom',
+                    url: 'https://github.com/hkhcoder/vprofile-project.git'
+                )
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean install -DskipTests'
+            }
+
+            post {
+                success {
+                    echo 'Build successful - archiving WAR file...'
+
+                    archiveArtifacts(
+                        artifacts: '**/target/*.war',
+                        fingerprint: true
+                    )
+                }
+            }
+        }
+
+        stage('Unit Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Checkstyle Analysis') {
+            steps {
+                sh 'mvn checkstyle:checkstyle'
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            environment {
+                scannerHome = tool 'sonar6.2'
+            }
+
+            steps {
+                withSonarQubeEnv('Sonarserver') {
+                    sh """
+                        ${scannerHome}/bin/sonar-scanner \
+                        -Dsonar.projectKey=vprofile \
+                        -Dsonar.projectName=vprofile \
+                        -Dsonar.projectVersion=1.0 \
+                        -Dsonar.sources=src/main/java \
+                        -Dsonar.java.binaries=target/classes \
+                        -Dsonar.junit.reportPaths=target/surefire-reports \
+                        -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
+                    """
+                }
+            }
+        }
+
+        stage('Quality Gate') {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+    }
+
+    post {
+
+        success {
+            echo '========================================'
+            echo '       PIPELINE SUCCESSFUL'
+            echo '========================================'
+        }
+
+        failure {
+            echo '========================================'
+            echo '         PIPELINE FAILED'
+            echo '========================================'
+            echo 'Check Console Output for details.'
+        }
+
+        always {
+            echo 'Pipeline execution completed.'
+        }
+    }
+}
